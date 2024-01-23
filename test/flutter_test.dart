@@ -1,4 +1,4 @@
-import 'package:chico_test/flutter.dart';
+import 'package:chico_test/chico_test.dart';
 import 'package:test/test.dart';
 
 void main() {
