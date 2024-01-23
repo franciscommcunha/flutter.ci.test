@@ -42,7 +42,4 @@ jobs:
         uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
         with:
           working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
-        run: flutter pub publish -f
-        #uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
-        #with:
-        #  working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
+        #run: flutter pub publish -f
