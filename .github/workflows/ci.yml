@@ -30,7 +30,6 @@ jobs:
     name: Release
     permissions:
       id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 20
@@ -46,5 +45,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Get dependencies
         run: flutter pub get
+      - name: Write to Pub dev
+        run: dart-lang/setup-dart/.github/workflows/publish.yml@v1
       - name: Publish
         run: dart pub publish -f
