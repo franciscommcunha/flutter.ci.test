@@ -54,4 +54,5 @@ jobs:
           PUB_DEV_PUBLISH_EXPIRATION: ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
         run: ./scripts/check_credentials.sh
       - name: Publish
-        run: flutter pub publish -f
+        uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
+        #run: flutter pub publish -f
