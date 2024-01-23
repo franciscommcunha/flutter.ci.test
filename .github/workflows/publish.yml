@@ -29,7 +29,10 @@ jobs:
       id-token: write
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
-    timeout-minutes: 20
+    timeout-minutes: 2
+    env:
+       CREDENTIALS: ${{ secrets.CREDENTIALS_JSON }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
