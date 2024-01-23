@@ -37,6 +37,6 @@ jobs:
         run: flutter pub get
       - name: Publish
         run: flutter pub publish -f
-        uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
+        #uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
         #with:
         #  working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
