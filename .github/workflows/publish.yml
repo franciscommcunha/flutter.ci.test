@@ -12,17 +12,16 @@ on:
       - created
   workflow_dispatch: null
 jobs:
-  # THIS WORKS GOOD
-  #pub-dry-run:
-  #  name: Publish Dry Run
-  #  runs-on: ubuntu-latest
-  #  container: ghcr.io/cirruslabs/flutter:3.13.5
-  #  timeout-minutes: 20
-  #  steps:
-  #    - name: Checkout code
-  #      uses: actions/checkout@v4
-  #    - name: Run publish dry run
-  #      run: flutter pub publish --dry-run
+  pub-dry-run:
+    name: Publish Dry Run
+    runs-on: ubuntu-latest
+    container: ghcr.io/cirruslabs/flutter:3.13.5
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Run publish dry run
+        run: flutter pub publish --dry-run
 
   # THIS WORKS GOOD AND PUBLISHED WHEN A TAG IS CREATED AND PUSHED
   #publish:
@@ -31,15 +30,15 @@ jobs:
   #  uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
 
   # THIS WORKS GOOD AND PUBLISHED WHEN A TAG IS CREATED AND PUSHED
-  # but we need to ad the write permission
-  # and add - uses: dart-lang/setup-dart@v1 tp the steps     
+  # but we need to add the write permission
+  # and add - uses: dart-lang/setup-dart@v1 to the steps
   release:
     name: Release
     permissions:
       id-token: write # Required for authentication using OIDC
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
-    timeout-minutes: 2
+    timeout-minutes: 20
 
     steps:
       - name: Checkout code
@@ -47,14 +46,5 @@ jobs:
       - uses: dart-lang/setup-dart@v1
       - name: Get dependencies
         run: flutter pub get
-      #- name: Setup Pub Credentials
-      #  shell: bash
-      #  env:
-      #    PUB_DEV_PUBLISH_ACCESS_TOKEN: ${{ secrets.PUB_DEV_PUBLISH_ACCESS_TOKEN }}
-      #    PUB_DEV_PUBLISH_ID_TOKEN: ${{ secrets.PUB_DEV_PUBLISH_ID_TOKEN }}
-      #    PUB_DEV_PUBLISH_REFRESH_TOKEN: ${{ secrets.PUB_DEV_PUBLISH_REFRESH_TOKEN }}
-      #    PUB_DEV_PUBLISH_TOKEN_ENDPOINT: ${{ secrets.PUB_DEV_PUBLISH_TOKEN_ENDPOINT }}
-      #    PUB_DEV_PUBLISH_EXPIRATION: ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
-      #  run: ./scripts/check_credentials.sh
       - name: Publish
         run: flutter pub publish -f
