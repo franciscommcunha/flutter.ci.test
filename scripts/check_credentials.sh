@@ -1,8 +1,5 @@
-# This script creates/updates credentials.json file which is used
-# to authorize publisher when publishing packages to pub.dev
+#!/bin/sh -e
 
-# Checking whether the secrets are available as environment
-# variables or not.
 if [ -z "${PUB_DEV_PUBLISH_ACCESS_TOKEN}" ]; then
   echo "Missing PUB_DEV_PUBLISH_ACCESS_TOKEN environment variable"
   exit 1
