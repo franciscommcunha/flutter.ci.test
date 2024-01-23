@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - '[0-9]+.[0-9]+.[0-9]**'
+      - '[0-9]+.[0-9]+.[0-9]+*'
   pull_request:
   release:
     types:
@@ -35,12 +35,12 @@ jobs:
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 20
-    env:
-      PUB_DEV_CREDENTIAL: ${{ secrets.PUB_DEV_CREDENTIAL }}
-      PUB_DEV_REFRESH_TOKEN: ${{ secrets.PUB_DEV_REFRESH_TOKEN }}
-      PUB_DEV_ID_TOKEN: ${{ secrets.PUB_DEV_ID_TOKEN }}
-      PUB_DEV_TOKEN_ENDPOINT: ${{ secrets.PUB_DEV_TOKEN_ENDPOINT }}
-      PUB_DEV_EXPIRATION: ${{ secrets.PUB_DEV_EXPIRATION }}
+    #env:
+      #PUB_DEV_CREDENTIAL: ${{ secrets.PUB_DEV_CREDENTIAL }}
+      #PUB_DEV_REFRESH_TOKEN: ${{ secrets.PUB_DEV_REFRESH_TOKEN }}
+      #PUB_DEV_ID_TOKEN: ${{ secrets.PUB_DEV_ID_TOKEN }}
+      #PUB_DEV_TOKEN_ENDPOINT: ${{ secrets.PUB_DEV_TOKEN_ENDPOINT }}
+      #PUB_DEV_EXPIRATION: ${{ secrets.PUB_DEV_EXPIRATION }}
 
     steps:
       - name: Checkout code
