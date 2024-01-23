@@ -1,53 +1,42 @@
-name: CI/CD
 
+name: CI/CD
 on:
   push:
     branches:
       - main
     tags:
-      - '[0-9]+.[0-9]+.[0-9]+*'
-  pull_request:
+      - "[0-9]+.[0-9]+.[0-9]+*"
+  pull_request: null
   release:
     types:
       - created
-  workflow_dispatch:
-
+  workflow_dispatch: null
 jobs:
-
   pub-dry-run:
     name: Publish Dry Run
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 20
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Run publish dry run
         run: flutter pub publish --dry-run
-
-  #release:
-  #  name: Release
-  #  permissions:
-  #    id-token: write # Required for authentication using OIDC
-  #  runs-on: ubuntu-latest
-  #  container: ghcr.io/cirruslabs/flutter:3.13.5
-  #  timeout-minutes: 20
-  #  #env:
-  #    #PUB_DEV_CREDENTIAL: ${{ secrets.PUB_DEV_CREDENTIAL }}
-  #    #PUB_DEV_REFRESH_TOKEN: ${{ secrets.PUB_DEV_REFRESH_TOKEN }}
-  #    #PUB_DEV_ID_TOKEN: ${{ secrets.PUB_DEV_ID_TOKEN }}
-  #    #PUB_DEV_TOKEN_ENDPOINT: ${{ secrets.PUB_DEV_TOKEN_ENDPOINT }}
-  #    #PUB_DEV_EXPIRATION: ${{ secrets.PUB_DEV_EXPIRATION }}
-  #
-  #  steps:
-  #    - name: Checkout code
-  #      uses: actions/checkout@v4
-  #    - name: Get dependencies
-  #      run: flutter pub get
-  #    - name: Publish
-  #      run: flutter pub publish -f
-  #      uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
-  #      with:
-  #        working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
-  #
+        
+  release:
+    name: Release
+    permissions:
+      id-token: write
+    runs-on: ubuntu-latest
+    container: ghcr.io/cirruslabs/flutter:3.13.5
+    timeout-minutes: 20
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Get dependencies
+        run: flutter pub get
+      - name: Publish
+        run: flutter pub publish -f
+        uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
+        with:
+          working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
