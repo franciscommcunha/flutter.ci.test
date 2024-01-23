@@ -1,5 +1,8 @@
-name: flutter
-description: A starting point for Dart libraries or applications.
+name: chico_test
+description: Jus t a test for ci. THIS IS NOT TO BE USED
+homepage: https://github.com/franciscommcunha
+documentation: https://github.com/franciscommcunha/flutter.ci.test/blob/main/README.md
+repository: https://github.com/franciscommcunha/flutter.ci.test
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 

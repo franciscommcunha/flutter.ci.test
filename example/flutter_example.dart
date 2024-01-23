@@ -1,4 +1,4 @@
-import 'package:flutter/flutter.dart';
+import 'package:chicoTest/flutter.dart';
 
 void main() {
   var awesome = Awesome();
