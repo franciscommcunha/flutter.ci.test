@@ -42,7 +42,6 @@ jobs:
     timeout-minutes: 2
 
     steps:
-      - uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Get dependencies
