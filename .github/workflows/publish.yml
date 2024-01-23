@@ -35,6 +35,7 @@ jobs:
     name: Release
     permissions:
       id-token: write # Required for authentication using OIDC
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 2
@@ -54,5 +55,4 @@ jobs:
           PUB_DEV_PUBLISH_EXPIRATION: ${{ secrets.PUB_DEV_PUBLISH_EXPIRATION }}
         run: ./scripts/check_credentials.sh
       - name: Publish
-        uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
         #run: flutter pub publish -f
