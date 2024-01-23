@@ -48,7 +48,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      #- uses: dart-lang/setup-dart@v1
+      - uses: dart-lang/setup-dart@v1
       - name: Get dependencies
         run: flutter pub get
       #- name: Setup Pub Credentials
