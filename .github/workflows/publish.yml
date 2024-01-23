@@ -25,9 +25,6 @@ jobs:
         
   release:
     name: Release
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
-    with:
-      working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
     permissions:
       id-token: write
     runs-on: ubuntu-latest
@@ -42,6 +39,9 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
       - name: Publish
+        uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
+        with:
+          working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
         run: flutter pub publish -f
         #uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
         #with:
