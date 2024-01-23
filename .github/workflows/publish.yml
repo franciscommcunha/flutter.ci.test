@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - "[0-9]+.[0-9]+.[0-9]+*"
   pull_request: null
   release:
     types:
@@ -32,10 +30,14 @@ jobs:
   # THIS WORKS GOOD AND PUBLISHED WHEN A TAG IS CREATED AND PUSHED
   # but we need to add the write permission
   # and add - uses: dart-lang/setup-dart@v1 to the steps
+
+  # https://birju.dev/posts/publish-your-flutter-package-using-github-actions/
+  # https://dart.dev/tools/pub/automated-publishing
   release:
     name: Release
     permissions:
       id-token: write # Required for authentication using OIDC
+    if: github.event_name == 'release'
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 20
