@@ -44,8 +44,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup credentials
-        run: ./scripts/setup_pub_credentials.sh
       - name: Get dependencies
         run: flutter pub get
       - name: Publish
