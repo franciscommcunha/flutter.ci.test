@@ -30,8 +30,7 @@ jobs:
     name: Release
     permissions:
       id-token: write # Required for authentication using OIDC
-      uses: franciscommcunha/flutter.ci.test/.github/workflows/ci.yml@v1
-    if: github.event_name == 'release'
+      uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 20
