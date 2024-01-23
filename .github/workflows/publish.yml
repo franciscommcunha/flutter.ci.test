@@ -46,7 +46,7 @@ jobs:
       - name: Get dependencies
         run: flutter pub get
       - name: Write to Pub dev
-        #run: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml@v1
-        run: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+        run: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
+        #run: dart-lang/setup-dart/.github/workflows/publish.yml@v1
       - name: Publish
         run: dart pub publish -f
