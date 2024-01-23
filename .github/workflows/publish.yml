@@ -12,19 +12,22 @@ on:
       - created
   workflow_dispatch: null
 jobs:
-  pub-dry-run:
-    name: Publish Dry Run
-    runs-on: ubuntu-latest
-    container: ghcr.io/cirruslabs/flutter:3.13.5
-    timeout-minutes: 20
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run publish dry run
-        run: flutter pub publish --dry-run
+  #pub-dry-run:
+  #  name: Publish Dry Run
+  #  runs-on: ubuntu-latest
+  #  container: ghcr.io/cirruslabs/flutter:3.13.5
+  #  timeout-minutes: 20
+  #  steps:
+  #    - name: Checkout code
+  #      uses: actions/checkout@v4
+  #    - name: Run publish dry run
+  #      run: flutter pub publish --dry-run
         
   release:
     name: Release
+    uses: dart-lang/setup-dart/.github/workflows/publish.yml@main [or a recent commit hash / version tag]
+    with:
+      working-directory: franciscommcunha/flutter.ci.test/
     permissions:
       id-token: write
     runs-on: ubuntu-latest
