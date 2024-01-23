@@ -31,6 +31,8 @@ jobs:
   #  with:
   #    working-directory: franciscommcunha/flutter.ci.test/.github/workflows/publish.yml
   #
+  uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
+
   release:
     name: Release
     permissions:
