@@ -9,8 +9,8 @@ on:
 
   pull_request:
   release:
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+*'
+    #tags:
+    #  - '[0-9]+.[0-9]+.[0-9]+*'
     types:
       - created
   workflow_dispatch:
