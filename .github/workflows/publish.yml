@@ -42,7 +42,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Set publishing token
-        uses: dart-lang/setup-dart/.github/workflows/publish.yml@main
+        uses: dart-lang/setup-dart@v1
       - name: Get dependencies
         run: flutter pub get
       - name: Publish
