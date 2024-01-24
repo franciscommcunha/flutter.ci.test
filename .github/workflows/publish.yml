@@ -1,29 +1,33 @@
 
-name: CI/CD
+name: Publishing
 on:
-  push:
+  #push:
+  #  tags:
+  #    - '[0-9]+.[0-9]+.[0-9]+*'
+
+    #branches:
+    #  - main
+  #pull_request:
+  release:
     tags:
       - '[0-9]+.[0-9]+.[0-9]+*'
-
-    branches:
-      - main
-  pull_request:
-  release:
     types:
       - created
+    branches:
+      - main
   workflow_dispatch:
     
 jobs:
-  pub-dry-run:
-    name: Publish Dry Run
-    runs-on: ubuntu-latest
-    container: ghcr.io/cirruslabs/flutter:3.13.5
-    timeout-minutes: 2
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Run publish dry run
-        run: flutter pub publish --dry-run
+  #pub-dry-run:
+  #  name: Publish Dry Run
+  #  runs-on: ubuntu-latest
+  #  container: ghcr.io/cirruslabs/flutter:3.13.5
+  #  timeout-minutes: 2
+  #  steps:
+  #    - name: Checkout code
+  #      uses: actions/checkout@v4
+  #    - name: Run publish dry run
+  #      run: flutter pub publish --dry-run
 
   # https://birju.dev/posts/publish-your-flutter-package-using-github-actions/
   # https://dart.dev/tools/pub/automated-publishing
