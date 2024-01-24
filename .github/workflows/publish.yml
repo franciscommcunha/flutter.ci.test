@@ -43,3 +43,5 @@ jobs:
         run: flutter pub get
       - name: Publish
         run: flutter pub publish -f
+
+# it seems to be working now, howver not running the dry run because it is missing in the on.push
