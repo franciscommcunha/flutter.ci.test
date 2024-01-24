@@ -8,11 +8,11 @@ on:
       - '[0-9]+.[0-9]+.[0-9]+*'
 
   pull_request:
-  release:
-    types:
-      - created
+  #release: ## TEST REMOVE THIS
+  #  types:
+  #    - created
   workflow_dispatch:
-    
+
 jobs:
   pub-dry-run:
     name: Publish Dry Run
@@ -55,4 +55,9 @@ jobs:
 # 10.0.0
 # it seems to be working now, however not running the dry run because it is missing in the on.push
 # works if creating a tag from github by creating a new release from there
-# -> it will trigger tro actions, one that can publish and other fails because it says that it can not from release event
+# -> it will trigger two actions, one that can publish and other fails because it says that it can not from release event
+
+# 11.0.0
+# it seems to be working now
+# works if creating a tag from github by creating a new release from there
+# -> it will trigger two actions, one that can publish and other fails because it says that it can not from release event
