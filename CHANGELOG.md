@@ -1,3 +1,7 @@
+## 7.0.0
+
+- Initial version.**
+
 ## 6.0.0
 
 - Initial version.**
