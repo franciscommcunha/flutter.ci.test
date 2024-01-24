@@ -1,5 +1,5 @@
 
-name: CI/CD
+name: Pull Request
 on:
   push:
     #tags:
