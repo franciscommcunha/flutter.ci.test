@@ -1,16 +1,4 @@
-## 6.0.1
-
-- Initial version.**
-
-## 5.3.0
-
-- Initial version.**
-
-## 5.2.0
-
-- Initial version.**
-
-## 5.1.0
+## 6.0.0
 
 - Initial version.**
 
