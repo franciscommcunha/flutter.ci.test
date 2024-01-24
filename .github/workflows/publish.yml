@@ -33,7 +33,6 @@ jobs:
     name: Release
     permissions:
       id-token: write # Required for authentication using OIDC
-    if: github.event_name == 'release'
     runs-on: ubuntu-latest
     container: ghcr.io/cirruslabs/flutter:3.13.5
     timeout-minutes: 2
