@@ -2,6 +2,8 @@
 name: Publishing
 on:
   push:
+    branches:
+      - main
     tags:
       - '[0-9]+.[0-9]+.[0-9]+*'
 
@@ -44,4 +46,13 @@ jobs:
       - name: Publish
         run: flutter pub publish -f
 
-# it seems to be working now, howver not running the dry run because it is missing in the on.push
+# 9.0.0
+# it seems to be working now, however not running the dry run because it is missing in the on.push
+# works if creating a tag from terminal and publishes
+#  -> but if does not create release on github
+#  -> i go to github, create a release, the release fails because it already exists
+
+# 10.0.0
+# it seems to be working now, however not running the dry run because it is missing in the on.push
+# works if creating a tag from github by creating a new release from there
+# -> it will trigger tro actions, one that can publish and other fails because it says that it can not from release event
