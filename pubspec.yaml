@@ -3,7 +3,7 @@ description: Jus t a test for ci. THIS IS NOT TO BE USED
 homepage: https://github.com/franciscommcunha
 documentation: https://github.com/franciscommcunha/flutter.ci.test/blob/main/README.md
 repository: https://github.com/franciscommcunha/flutter.ci.test
-version: 14.0.0
+version: 15.0.0
 # repository: https://github.com/my_org/my_repo
 
 environment:
